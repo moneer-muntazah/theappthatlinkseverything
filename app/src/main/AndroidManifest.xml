@@ -9,15 +9,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TheAppThatLinksEverything">
-        <activity android:name=".DisplayMessageActivity"
+        <activity
+            android:name=".DisplayMessageActivity"
             android:label="@string/display_message_activity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="https"
+
+                <data
                     android:host="www.sample.com"
-                    android:pathPrefix="/profile"/>
+                    android:pathPrefix="/display"
+                    android:scheme="https" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="sample"
+                    android:pathPrefix="/display"
+                    android:scheme="app" />
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity">
